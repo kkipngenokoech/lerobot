@@ -90,6 +90,8 @@ jobs:
 
       # lancedb-convert converts the fixtures for the lance backend tests
       - name: Install lerobot with all extras
+        env:
+          CMAKE_POLICY_VERSION_MINIMUM: "3.5"
         run: uv sync --locked --extra all --extra lancedb-convert # TODO(Steven): Make flash-attn optional
 
       - name: Login to Hugging Face
